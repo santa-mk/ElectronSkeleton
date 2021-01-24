@@ -5,6 +5,7 @@ env:
 extends:
   - 'plugin:react/recommended'
   - google
+  - 'plugin:@typescript-eslint/recommended' # add TypeScript recommended rule
 parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaFeatures:
@@ -14,4 +15,13 @@ parserOptions:
 plugins:
   - react
   - '@typescript-eslint'
-rules: {}
+rules: {
+  # 関数の複雑さを 10 以下にする
+  complexity: ['error', 10]
+  # React のプロパティの型チェックを省略する (TypeScript でチェックされるため)
+  react/prop-types: off
+  # インターフェースの先頭文字を "I" にする
+  '@typescript-eslint/naming-convention':
+    - error
+    - prefixWithI: 'always'
+}
