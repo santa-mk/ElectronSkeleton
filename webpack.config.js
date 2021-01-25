@@ -48,6 +48,6 @@ module.exports = {
      template: './index.html',
     }),
     // for eslint
-    new ESLintPlugin(options),
+    new ESLintPlugin(),
   ],
 };
